@@ -1,0 +1,38 @@
+<div class="container">
+    <!-- Container for chat feed -->
+    <div class="chatContainer" #chatContainer>
+        <p *ngFor="let item of messages" class="messageStream 
+      {{ item.userName === userName ? 'myPost' : '' }}
+      {{ item.userName === 'server' ? 'serverPost': '' }}">
+            {{ item.userName === 'server' ? '' : item.userName + ': '  }}{{  item.message }}
+        </p>
+        <h3 *ngIf="selectedRoom === 'none'">Please join a room to continue. You can always join public!</h3>
+    </div>
+    <div class="userList" *ngIf="!mobileList">
+        <ul class="userList-UL">
+            <li class="userListItem" *ngFor="let user of userList">{{ user }}</li>
+        </ul>
+    </div>
+    <!-- Container for chat feed input -->
+    <div class="chatInputContainer">
+        <input type="text" class="chatInput" name="chatInput" (keypress)="onChatInputKeyPress($event)" #chatInput>
+        <button type="button" class="sendButton" (click)="onSend()" [disabled]="isChatSpam"><strong>Send</strong></button>
+        <button type="button" class="sendButton" (click)="onOpenMobileUserList()"
+            *ngIf="mobileList"><strong>Users</strong></button>
+        <button type="button" class="sendButton" (click)="onOpenMobileRoomList()"
+                *ngIf="mobileList"><strong>Rooms</strong></button>
+        <button type="button" class="sendButton" (click)="onLeaveRoom()"
+            *ngIf="mobileList"><strong>Leave</strong></button>
+    </div>
+    <!-- Container for errors -->
+    <div class="errorContainer" *ngIf="isChatError || isChatSpam">
+        <h3>{{ chatErrorMessage }}</h3>
+    </div>
+    <!-- Mobile user list window -->
+    <div class="mobileUserList" *ngIf="mobileList && isMobileListOpen">
+        <button type="button" class="sendButton usersButton" (click)="onCloseMobileUserList()"><strong>Close</strong></button>
+        <ul class="mobileUserList-UL">
+            <li class="mobileUserListItem" *ngFor="let user of userList">{{ user }}</li>
+        </ul>
+    </div>
+</div>

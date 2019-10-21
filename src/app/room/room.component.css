@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+.container {
+    height: 90vh;
+    font-family: 'Open Sans', sans-serif;
+    width: 769px;
+    margin: auto;
+    box-shadow: 0 0 5px 5px #4125a7;
+    border-radius: 5px;
+}
+
+.selectName {
+    display: none;
+}
+
+.userNameInput {
+    width: 75%;
+}
+
+.changeNameBtn {
+    border-radius: 10px;
+    height: 1.5rem;
+    margin-left: 5px;
+    background-color: #6439ff;
+    color: white;
+    border: 1px solid #4125a7;
+    display: block;
+    margin: 3px auto 3px auto;
+}
+
+.changeNameBtn:hover {
+    background-color: rgb(240, 255, 107);
+    color: #6439ff;
+}
+
+.clear {
+    clear: both;
+}
+
+.error {
+    background-color: red;
+    color: white;
+    width: 50%;
+    margin: auto;
+    min-height: 1rem;
+}
+
+.enterName {
+    margin: 10rem auto 0 auto;
+    text-align: center;
+    background-image: linear-gradient(to bottom right, #4e33af, #2475a3 );
+    border-radius: 3px;
+    box-shadow: 0 0 10px 5px #4125a7;
+    color: white;
+    width: 33%;
+}
+
+.enterName h3 {
+    margin-top: 5px;
+}
+
+.chatContainer {
+    float: left;
+    border-radius: 3px;
+    margin: 0 0 1rem 0;
+    width: 518px;
+    height: 85%;
+    display: block;
+    overflow-y: scroll;
+    word-wrap: break-word;
+    background-image: linear-gradient(to bottom right, #4e33af, #2475a3 );
+    color: #5cff47;
+}
+
+.userList {
+    width: 250px;
+    float: left;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to bottom right, #4e33af, #2475a3 );
+    overflow-y: scroll;
+    height: 85%;
+    text-align: left;
+    color: white;
+    border-left: 1px solid #d1d1d1;
+}
+
+.userList ul {
+    margin: 2px 2px 2px 2px;
+    padding: 0;
+    list-style-type: none;
+}
+
+.userListItem {
+    margin: 0;
+    padding: 0;
+}
+
+.mobileUserList {
+    width: 250px;
+    z-index: 1;
+    position: absolute;
+    top: 10px;
+    margin: 0;
+    padding: 0;
+    box-shadow: -1px 0 10px 5px #4125a7;
+    background-image: linear-gradient(to bottom right, #4e33af, #2475a3 );
+    overflow-y: scroll;
+    height: 95%;
+    text-align: left;
+    color: white;
+    border: 1px solid #d1d1d1;
+}
+
+.mobileUserList ul {
+    margin: 2px 2px 2px 8px;
+    padding: 0;
+    list-style-type: none;
+}
+
+.mobilUserListItem {
+    margin: 0;
+    padding: 0;
+}
+
+.myPost {
+    color: #f0ff6b;
+}
+
+.serverPost {
+    color: white;
+}
+
+.chatInputContainer {
+    margin: 1rem auto 0 auto;
+    width: 66%;
+    clear: both;
+}
+
+.chatInput {
+    border-radius: 10px;
+    width: 75%;
+    height: 1.5rem;
+    border: 1px solid #4125a7;
+}
+
+.chatInput:focus {
+    outline: none;
+    box-shadow: 0 0 1px 1px #4125a7;
+}
+
+.sendButton {
+    border-radius: 10px;
+    width: 70px;
+    height: 1.5rem;
+    margin-left: 5px;
+    background-color: #6439ff;
+    color: white;
+    border: 1px solid #4125a7;
+}
+
+.sendButton:hover {
+    background-color: rgb(240, 255, 107);
+    color: #6439ff;
+}
+
+.sendButton:focus {
+    outline: none;
+    background-color: rgb(240, 255, 107);
+    color: #6439ff;
+}
+
+.messageStream {
+    margin: auto 1rem .5rem 1rem;
+}
+
+.errorContainer {
+    width: 100%;
+    color: white;
+    background-color: #ff0000;
+    text-align: center;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    .sendButton {
+        float: right;
+        display: block;
+        margin: 2px 5px 2px 0;
+    }
+    
+    .container {
+        height: 100vh;
+        width: 100%;
+        margin: 0;
+    }
+    .chatInputContainer {
+        width: 100%;
+    }
+    .chatContainer {
+        width: 100%;
+        height: 85%;
+    }
+    .chatInput {
+        width: 100%;
+        margin: auto;
+        display: block;
+    }
+    .enterName {
+        width: 80%;
+    }
+    .errorContainer {
+        position: relative;
+        bottom: 100px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .errorContainer {
+        position: relative;
+        bottom: 120px;
+    }
+}
